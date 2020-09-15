@@ -22,3 +22,26 @@ El curso busca profundizar en el aspecto conceptual, teórico y práctico de alg
 
 
 ## Estructura del Repositorio
+
+### Sesión 1 de Monitoria - Programación básica en R
+
+> El proposito es introducir los elementos básicos de programación en R y manejo de Rstudio
+
+#### Scripts:
+* Sesión 1 - Introducción a R.R
+
+#### Guías de aprendizaje de Rstudio y rmarkdown:
+* rmarkdown-spanish (1).pdf
+* rstudio-ide.pdf
+
+### Sesión 2 de Monitoria - Cargar datos, MCO y Supuestos
+
+> Consiste en introducir la manera de cargar datos en R así como en la forma de realizar regresiones en R. Se analizaran algunos supuestos básicos de MCO
+
+#### Scripts:
+* Script 2 - Importación de datos y MCO.R
+
+#### Bases de datos:
+* Datos1 - Script 2.xlsx
+* Datos2 - Script 2.csv
+* Elecciones - Script 2.xls
