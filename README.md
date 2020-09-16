@@ -45,3 +45,5 @@ El curso busca profundizar en el aspecto conceptual, teórico y práctico de alg
 * Datos1 - Script 2.xlsx
 * Datos2 - Script 2.csv
 * Elecciones - Script 2.xls
+
+### Sesión 3 de Monitoria - Datos Panel
