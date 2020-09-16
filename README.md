@@ -23,6 +23,8 @@ El curso busca profundizar en el aspecto conceptual, teórico y práctico de alg
 
 ## Estructura del Repositorio
 
+> Cada sesión de monitoria tendrá tres subcarpetas. El subdirectorio *1_documentos_pdfs* tiene todos los documentos importantes de la sesión de monitoria, el subdirectorio *2_datos* tiene todas las bases de datos usadas en monitoria y finalmente el subdirectorio *3_códigos* tiene el script utilizado para la monitoria. Queda como responsabilidad del estudiante descargar o en su defecto copiar este repositorio y luego organizar en su computador de la manera que considere más adecuada. 
+
 ### Sesión 1 de Monitoria - Programación básica en R
 
 > El proposito es introducir los elementos básicos de programación en R y manejo de Rstudio
@@ -30,7 +32,7 @@ El curso busca profundizar en el aspecto conceptual, teórico y práctico de alg
 #### Scripts:
 * Sesión 1 - Introducción a R.R
 
-#### Guías de aprendizaje de Rstudio y rmarkdown:
+#### Documentos:
 * rmarkdown-spanish (1).pdf
 * rstudio-ide.pdf
 
@@ -45,5 +47,11 @@ El curso busca profundizar en el aspecto conceptual, teórico y práctico de alg
 * Datos1 - Script 2.xlsx
 * Datos2 - Script 2.csv
 * Elecciones - Script 2.xls
+* titanic.csv
+
+#### Documentos:
+* monitoria2_estadisticaR_supuestos.Rmd
+* monitoria2_estadisticaR_supuestos.ipynb
+* monitoria2_estadisticaR_supuestos.pdf
 
 ### Sesión 3 de Monitoria - Datos Panel
