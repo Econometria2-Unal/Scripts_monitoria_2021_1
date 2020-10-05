@@ -351,8 +351,6 @@ grafica = mtcars %>%
   geom_smooth(method='lm', formula= y~x, se = F) +
   theme_classic()
 
-ggplot(mtcars, aes(x = mpg))
-
 grafica
 
 
