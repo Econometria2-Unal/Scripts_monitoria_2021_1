@@ -54,4 +54,32 @@ El curso busca profundizar en el aspecto conceptual, teórico y práctico de alg
 * monitoria2_estadisticaR_supuestos.ipynb
 * monitoria2_estadisticaR_supuestos.pdf
 
-### Sesión 3 de Monitoria - Datos Panel
+### Sesión 3 de Monitoria - Datos Panel 1
+
+> Consiste en una introducción al manejo de datos panel en R. Para ello se empleará de manera extensiva el paquete **plm**. Se muestra como transformar una base de datos a un objeto *pdata.frame*. Se muestra los principales métodos de estimación para datos panel: **MCOC**, **efectos fijos**, **primeras diferencias** y **efectos aleatorias**
+
+#### Scripts:
+* Sesión 3 - Panel importación de datos.R
+
+#### Bases de datos:
+
+#### Documentos:
+* monitoria3_conceptos_basicos_panel.Rmd
+* monitoria3_conceptos_basicos_panel.ipynb
+* monitoria3_conceptos_basicos_panel.pdf
+
+### Sesión 4 de Monitoria - Datos Panel 2
+
+> Consiste en un manejo completo de datos panel en R por medio del paquete **plm**. Primero, se muestra, nuevamente, los principales métodos de estimación para datos panel: **MCOC**, **efectos fijos**, **primeras diferencias** y **efectos aleatorias**. Luego, se ilustra una manera práctica de seleccionar el mejor modelo estimado por los anteriores métodos utilizando los test estadísticos de: **test de Hausman**, **test de primeras diferencias de Wooldridge** y **Prueba de Multiplicadores de Lagrange de Breusch-Pagan**. Posteriormente, se muetra como realizar la validación de supuestos sobre el modelo escogido utilizando las pruebas de: **Breush-Pagan**, **Breusch-Godfrey**, **Breusch-Pagan LM test for cross-sectional dependence in panels** y la corrección usando errores robustos cálculados pr el método de **arellano**. Finalmente, se ilustra como presentar los resultados de las estimaciones realizadas utilizando el paquete **stargazer**. 
+
+#### Scripts:
+* Sesión 4 - Panel con pruebas.R
+
+#### Bases de datos:
+
+#### Documentos:
+* monitoria4_panel_completo.Rmd
+* monitoria4_panel_completo.ipynb
+* monitoria4_panel_completo.pdf
+
+### Sesión 5 de Monitoria - Variables Instrumentales
