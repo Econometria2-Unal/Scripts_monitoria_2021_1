@@ -95,3 +95,4 @@ El curso busca profundizar en el aspecto conceptual, teórico y práctico de alg
 * Sesión 5 - Variables Instrumentales.Rmd
 * Sesión 5 - Variables Instrumentales.ipynb
 * Sesión 5 - Variables Instrumentales.pdf
+* Variable Instrumental.pptx
