@@ -4,7 +4,9 @@
 // with mean 'mu' and standard deviation 'sigma'.
 //
 // Learn more about model development with Stan at:
-//
+// UN CCAMBIO AL AZAR
+// OTRO CAMBIO
+// OTRO CAMBIO ADICIONAL
 //    http://mc-stan.org/users/interfaces/rstan.html
 //    https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
 //
