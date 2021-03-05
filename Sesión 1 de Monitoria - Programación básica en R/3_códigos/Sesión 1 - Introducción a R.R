@@ -1,14 +1,13 @@
 ##_______________________________________________________________________________________________________
 ##_______________________________________________________________________________________________________
              #UNIVERSIDAD NACIONAL DE COLOMBIA - FACULTAD DE CIENCIAS ECON?MICAS
-                                 #ECONOMETRIA II - 2020-I
+                                 #ECONOMETRIA II - 2021-II
                         #SESIÓN #1 MONITORIA : INTRODUCCIÓN A RSTUDIO
 ##_______________________________________________________________________________________________________
 ##_______________________________________________________________________________________________________
 
-##______________________##
-#1. INTRODUCCIÓN A R. 
-##______________________##
+
+#---- 1. INTRODUCCIÓN A R. ----
 
 remove(list = ls()) # Codigo para limpiar el Environment 
 
@@ -50,10 +49,7 @@ log10(100)
 # Operaciones compuestas
 round(log10(abs(-97)),3)
 
-
-##___________________________________##
-#2. CREACIÓN DE OBJETOS.
-##___________________________________##
+#---- 2. CREACIÓN DE OBJETOS. ----
 
 #Crear el objeto.
 z = 4
@@ -90,7 +86,7 @@ Dummy = c(rep(0,5), rep(1,10), rep(0,5))
 #Creación de matrices: matrix(a:b,nrow = 4, byrow =TRUE) o matrix(a:b,nrow = 4, byrow = FALSE)
 
 MAT1=matrix(1:10,nrow = 5,byrow = TRUE);MAT1
-MAT2=matrix(10:20,ncol=5, byrow = FALSE);MAT2
+MAT2=matrix(10:19,ncol=5, nrow = 2, byrow = FALSE);MAT2
 
 #Creación de matrices a partir de vectores: cbind(a,b) o rbind(a,b)
 a = c(1,4,5,7,9,7,10,6,5,7,9)
@@ -98,9 +94,9 @@ b = c(3,4,6,8,2,3,11,1,2,5,6)
 MAT3 = cbind(a,b)
 MAT4 = rbind(a,b)
 
-##_________________________________##
-#3.Operaciones entre vectores
-##_________________________________##
+
+#---- 3.Operaciones entre vectores ----
+
 
 #Número de objetos en el vector: length(vector)
 length(a)
@@ -186,9 +182,7 @@ a[c(2,3,4)]
 #Eliminar ciertos elementos del vector por posición
 a[-c(1,5)]  
 
-##_____________________________________##
-#4. Operaciones entre matrices
-##_____________________________________##
+#---- 4. Operaciones entre matrices ----
 
 #Sumar una constante j a la matriz
 MAT1 + 10
@@ -227,8 +221,8 @@ det(Mat_diag)
 #det(MAT1)
 
 #Mostrar el elemento ij de la matriz: MAT[i,j]
-MAT2[2,3]
-MAT2[3,2]
+MAT2[2,1]
+MAT2[1,2]
 
 #Mostrar los elementos de la fila i: MAT[i,]
 MAT3[1,]
@@ -241,9 +235,7 @@ rownames(MAT1) = c("a","b","c","d","e")
 colnames(MAT1) = c("f","g")
 MAT1
 
-##____________________________##
-#5.Operaciones lógicas
-##____________________________##
+#---- 5. Operaciones lógicas ----
 
 #Elementos mayores o iguales a j en el vector
 a>=4
@@ -264,12 +256,75 @@ a>=1 & b==3
 #Al menos una es cierta: "|"
 a>=1 | b==3
 
-#Negaci?n: "!"
+#Negación: "!"
 !a<0 #a no es menor que cero
 
-##_______________________________________##
-#5.Estructuras de control y ciclos en R
-##_______________________________________##
+#---- 6.Crear funciones en R ----
+
+#Crear una función definiendo los argumentos y la expresión
+funcion_simple <- function(x,y,z,j=3){
+ w = x + y + z + j
+ return(w)
+}
+
+#Evaluar la función para ciertos valores de los argumentos
+funcion_simple(2,3,10)
+funcion_simple(c(1:10),c(1:10),c(1:10))
+
+# Función más elaborada: construya una función que imprima si la suma de los elementos
+# de un vector es par o impar y que retorne la suma de los elementos del vector
+
+funcion_2 = function(vect)
+{
+  suma = 0
+  for (i in vect)
+  {
+    suma = suma + i    
+  }
+  if (suma %% 2 == 0){
+    print("La suma de los elementos del vecotr es par")
+  }else{
+    print("La suma de los elementos del vecotr es impar")
+  }
+  return(suma)
+}
+
+vect_prueba = c(0, 2, 4, 5, 7)
+respuesta = funcion_2(vect_prueba)
+respuesta
+
+#---- 7. Manejo de ggplot2 y dplyr ----
+
+
+# Importar conjunto de paquetes del tidyverse (incluye ggplot y dplyr)
+library(tidyverse)
+
+#view(mtcars)
+glimpse(mtcars)
+
+# grafica de ggplot2
+grafica = mtcars %>%
+  ggplot(aes(x = mpg, y = hp)) +
+  geom_point(aes(color = factor(cyl))) +
+  geom_smooth(method='lm', formula= y~x, se = F) +
+  theme_classic()
+
+grafica
+
+
+# manipulación de base de datos usando dplyr
+
+manip1 = mtcars %>%  
+  mutate(mult = mpg * cyl, sqr_mpg = mpg^2) 
+
+manip2 = mtcars %>% 
+  filter(cyl > 4)
+
+manip3= mtcars %>% 
+  group_by(cyl) %>% 
+  summarize(n  = n()) 
+
+#---- 8. Estructuras de control y ciclos en R ----
 
 # ciclo while
 i = 0
@@ -297,71 +352,3 @@ if (n2 %% 2 == 0){
   print("Es un n?mero impar")
 }
 
-
-##____________________________##
-#6.Crear funciones en R
-##____________________________##
-
-#Crear una función definiendo los argumentos y la expresión
-Mi.funcion <- function(x,y,z,j=3){
- w = x^2 + y^2 + z + j
- return(w)
-}
-
-#Evaluar la función para ciertos valores de los argumentos
-Mi.funcion(2,3,10)
-Mi.funcion(c(1:10),c(1:10),c(1:10))
-
-# función más elaborada: construya una funci?n que imprima si la suma de los elementos
-# de un vector es par o impar y que retorne la suma de los elementos del vector
-
-funcion_2 = function(vect)
-{
-  suma = 0
-  for (i in vect)
-  {
-    suma = suma + i    
-  }
-  if (suma %% 2 == 0){
-    print("La suma de los elementos del vecotr es par")
-  }else{
-    print("La suma de los elementos del vecotr es impar")
-  }
-  return(suma)
-}
-
-vect_prueba = c(0, 2, 4, 5, 7)
-respuesta = funcion_2(vect_prueba)
-respuesta
-
-##____________________________##
-#7.Manejo de ggplot2 y dplyr
-##____________________________##
-
-# Importar conjunto de paquetes del tidyverse (incluye ggplot y dplyr)
-library(tidyverse)
-
-#view(mtcars)
-glimpse(mtcars)
-
-# grafica de ggplot2
-grafica = mtcars %>%
-  ggplot(aes(x = mpg, y = hp)) +
-  geom_point(aes(color = factor(cyl))) +
-  geom_smooth(method='lm', formula= y~x, se = F) +
-  theme_classic()
-
-grafica
-
-
-# manipulación de base de datos usando dplyr
-
-manip1 = mtcars %>%  
-  mutate(mult = mpg * cyl, sqr_mpg = mpg^2) 
-  
-manip2 = mtcars %>% 
-  filter(cyl > 4)
-
-manip3= mtcars %>% 
-  group_by(cyl) %>% 
-  summarize(n  = n()) 
