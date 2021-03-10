@@ -1,18 +1,17 @@
 ##_______________________________________________________________________________________________________
 ##_______________________________________________________________________________________________________
-             #UNIVERSIDAD NACIONAL DE COLOMBIA - FACULTAD DE CIENCIAS ECON?MICAS
-                                 #ECONOMETRIA II - 2021-II
+             #UNIVERSIDAD NACIONAL DE COLOMBIA - FACULTAD DE CIENCIAS ECONÓMICAS
+                                 #ECONOMETRIA II - 2021-I
                         #SESIÓN #1 MONITORIA : INTRODUCCIÓN A RSTUDIO
 ##_______________________________________________________________________________________________________
 ##_______________________________________________________________________________________________________
-
 
 #---- 1. INTRODUCCIÓN A R. ----
 
 remove(list = ls()) # Codigo para limpiar el Environment 
 
 
-#1.1. Operaciones aritm?ticas
+#1.1. Operaciones aritméticas
 
 # Número PI
 pi
@@ -35,6 +34,7 @@ sqrt(81)
 
 # Funciones trigonométricas: sin(#);cos(#);tan(#)
 sin(1)
+sin(pi)
 cos(1)
 tan(0.5)
 
@@ -85,7 +85,7 @@ Dummy = c(rep(0,5), rep(1,10), rep(0,5))
 
 #Creación de matrices: matrix(a:b,nrow = 4, byrow =TRUE) o matrix(a:b,nrow = 4, byrow = FALSE)
 
-MAT1=matrix(1:10,nrow = 5,byrow = TRUE);MAT1
+MAT1=matrix(1:10,nrow = 5,byrow = TRUE);MAT1 
 MAT2=matrix(10:19,ncol=5, nrow = 2, byrow = FALSE);MAT2
 
 #Creación de matrices a partir de vectores: cbind(a,b) o rbind(a,b)
@@ -97,9 +97,8 @@ MAT4 = rbind(a,b)
 
 #---- 3.Operaciones entre vectores ----
 
-
 #Número de objetos en el vector: length(vector)
-length(a)
+length(a) 
 length(Colores)
 
 #Tipo de objeto en el vector: class(vector)
@@ -194,6 +193,8 @@ MAT3 + t(MAT4)
 MAT3*10
 
 #Producto de matrices
+dim(MAT3)
+dim(MAT4)
 MAT3%*%MAT4
 
 #Matriz Transpuesta: t() 
@@ -262,7 +263,7 @@ a>=1 | b==3
 #---- 6.Crear funciones en R ----
 
 #Crear una función definiendo los argumentos y la expresión
-funcion_simple <- function(x,y,z,j=3){
+funcion_simple = function(x,y,z,j=3){
  w = x + y + z + j
  return(w)
 }
@@ -270,28 +271,6 @@ funcion_simple <- function(x,y,z,j=3){
 #Evaluar la función para ciertos valores de los argumentos
 funcion_simple(2,3,10)
 funcion_simple(c(1:10),c(1:10),c(1:10))
-
-# Función más elaborada: construya una función que imprima si la suma de los elementos
-# de un vector es par o impar y que retorne la suma de los elementos del vector
-
-funcion_2 = function(vect)
-{
-  suma = 0
-  for (i in vect)
-  {
-    suma = suma + i    
-  }
-  if (suma %% 2 == 0){
-    print("La suma de los elementos del vecotr es par")
-  }else{
-    print("La suma de los elementos del vecotr es impar")
-  }
-  return(suma)
-}
-
-vect_prueba = c(0, 2, 4, 5, 7)
-respuesta = funcion_2(vect_prueba)
-respuesta
 
 #---- 7. Manejo de ggplot2 y dplyr ----
 
@@ -324,7 +303,7 @@ manip3= mtcars %>%
   group_by(cyl) %>% 
   summarize(n  = n()) 
 
-#---- 8. Estructuras de control y ciclos en R ----
+#---- 8. Opcional: Estructuras de control y ciclos en R ----
 
 # ciclo while
 i = 0
@@ -349,6 +328,29 @@ n2 = 6
 if (n2 %% 2 == 0){
   print("Es un número par")
 }else{
-  print("Es un n?mero impar")
+  print("Es un número impar")
 }
 
+#---- 9. Tarea: Analizar y entender la siguiente función ----
+
+# Función más elaborada: construya una función que imprima si la suma de los elementos
+# de un vector es par o impar y que retorne la suma de los elementos del vector
+
+funcion_2 = function(vect)
+{
+  suma = 0
+  for (i in vect)
+  {
+    suma = suma + i    
+  }
+  if (suma %% 2 == 0){
+    print("La suma de los elementos del vecotr es par")
+  }else{
+    print("La suma de los elementos del vecotr es impar")
+  }
+  return(suma)
+}
+
+vect_prueba = c(0, 2, 4, 5, 7)
+respuesta = funcion_2(vect_prueba)
+respuesta
