@@ -243,7 +243,7 @@ a>=4
 
 #Elementos menores o iguales a j en el vector
 a<=4
-length(a[a<=4]) #Cu?ntos elementos satisfacen la condici?n
+length(a[a<=4]) #Cuántos elementos satisfacen la condición
 
 #Elementos iguales a j en el vector
 a==4
@@ -270,10 +270,10 @@ funcion_simple = function(x,y,z,j=3){
 
 #Evaluar la función para ciertos valores de los argumentos
 funcion_simple(2,3,10)
+funcion_simple(2,3,10,1)
 funcion_simple(c(1:10),c(1:10),c(1:10))
 
 #---- 7. Manejo de ggplot2 y dplyr ----
-
 
 # Importar conjunto de paquetes del tidyverse (incluye ggplot y dplyr)
 library(tidyverse)
@@ -282,7 +282,7 @@ library(tidyverse)
 glimpse(mtcars)
 
 # grafica de ggplot2
-grafica = mtcars %>%
+grafica = mtcars %>% 
   ggplot(aes(x = mpg, y = hp)) +
   geom_point(aes(color = factor(cyl))) +
   geom_smooth(method='lm', formula= y~x, se = F) +
@@ -293,13 +293,16 @@ grafica
 
 # manipulación de base de datos usando dplyr
 
+# Creación de variables apartir de variables antiguas
 manip1 = mtcars %>%  
   mutate(mult = mpg * cyl, sqr_mpg = mpg^2) 
 
+# Filtrar bases de datos a partir de los valores de una variable 
 manip2 = mtcars %>% 
   filter(cyl > 4)
 
-manip3= mtcars %>% 
+# Para sacar estadística descriptiva de una base de datos
+manip3 = mtcars %>% 
   group_by(cyl) %>% 
   summarize(n  = n()) 
 
