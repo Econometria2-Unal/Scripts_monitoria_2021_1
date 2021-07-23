@@ -154,7 +154,7 @@ ggPacf(residuals(arima_1.0.2_d0)) # la ACF y PACF parece indicar que hay correla
 lags.test = length(spread)/4;lags.test
 
 # Test Box-Pierce para autocorrelación en los residuales
-Box.test(residuals(arima_1.0.2_d0),lag=lags.test, type = c("Box-Pierce")) #No Rechazo H0, no se cumple el supuesto. 
+Box.test(residuals(arima_1.0.2_d0),lag=lags.test, type = c("Box-Pierce")) #No Rechazo H0, se cumple el supuesto. 
 Box.test(residuals(arima_1.0.2_d0),type='Box-Pierce',lag=20) #No Rechazo H0, se cumple el supuesto. 
 Box.test(residuals(arima_1.0.2_d0),type='Box-Pierce',lag=30) #No Rechazo H0, se cumple el supuesto.
 # Test Ljung-Box para autocorrelación en los residuales.
@@ -182,6 +182,8 @@ jarque.bera.test(residuals(arima_1.0.2_d0)) #Se rechaza H0, no hay normalidad.
 
 ## Utilizando el comando forecast del paquete forecast 
 forecast.spread <- forecast(arima_1.0.2_d0, lead = 12, alpha = 0.05,output = T); forecast.spread
+plot(forecast.spread)
+autoplot(forecast.spread)
 
 ## Utilizando el comando sarima.for del paquete astsa
 sarima.for(spread, n.ahead = 12, p = 6, d = 1, q = 3)

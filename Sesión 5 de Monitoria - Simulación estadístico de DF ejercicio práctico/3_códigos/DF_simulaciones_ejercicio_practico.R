@@ -27,8 +27,8 @@ n = 100        # n denota el número de observaciones que tendrá cada serie sim
 N = 10000      # N denota el número total de series que se van a simular, en total se van a simular 10.000 series
 
 # Otros parámetros importantes: 
-trend = 1:n
-drift = 0.5
+trend = 1:n # (tendencia deterministica lineal)
+drift = 0.5 # (deriva)
 
 #---- Funciones para la simulación ----
 
