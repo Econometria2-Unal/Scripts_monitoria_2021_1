@@ -112,8 +112,8 @@ roots(V.no) #El proceso es estable.
 Acoef(V.no) #Los valores teóricos eran: a11=0.3; a12=0.2; a21=0.5; a22=0.6. Las estimaciones son cercanas.
 
 #Matriz de varianzas y covarianzas de los residuales
-Sigma.est = summary(V.no)$covres
-Sigma.est #Individualmente cada residual debe ser un ruido blanco. Sin embargo, hay correlación contemporánea entre ellos. 
+Sigma.est = summary(V.no)$covres #Esta es la matriz (Sigma). Si se hace una descomposición de Choleski recordar que: Sigma = P %*% t(P), donde P es una matriz triangular inferior
+Sigma.est #Individualmente cada residual debe ser un ruido blanco. Sin embargo, hay correlación contemporánea entre ellos. (Son residuales que corresponden a la estiación de un VAR en forma reducida)
 
 #---- Tercera etapa: Validación de supuestos serie simulada  ----
 
@@ -313,8 +313,8 @@ roots(V.dr.1) #El proceso es estable.
 Acoef(V.dr.1) #Presenta los resultados de la matriz A_1, A_2 y A_3
 
 #Matriz de varianzas y covarianzas de los residuales
-Sigma.e = summary(V.dr.1)$covres
-Sigma.e #Individualmente cada residual debe ser un ruido blanco. Sin embargo, hay correlación contemporánea entre ellos. 
+Sigma.e = summary(V.dr.1)$covres #Esta es la matriz (Sigma). Si se hace una descomposición de Choleski recordar que: Sigma = P %*% t(P), donde P es una matriz triangular inferior
+Sigma.e #Individualmente cada residual debe ser un ruido blanco. Sin embargo, hay correlación contemporánea entre ellos. (Son residuales que corresponden a la estiación de un VAR en forma reducida)
 
 #---- Tercera etapa: Validación de supuestos modelo VAR ejemplo con series reales ----
 
